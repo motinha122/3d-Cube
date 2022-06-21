@@ -1,0 +1,138 @@
+/* Mixins */
+/* Body */
+body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-family: 'Righteous', sans-serif;
+  font-size: 40px;
+  height: 100vh;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+/* 3D Cube */
+#scene {
+  width: 200px;
+  height: 200px;
+  -webkit-perspective: 600px;
+          perspective: 600px;
+}
+
+#scene #cube {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  -webkit-transition: -webkit-transform 1s;
+  transition: -webkit-transform 1s;
+  transition: transform 1s;
+  transition: transform 1s, -webkit-transform 1s;
+}
+
+#scene #cube div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  border: 2px solid;
+}
+
+/* Rotate Animation */
+.rotatingAnimation {
+  -webkit-animation: rotateYaxis 7s infinite linear;
+          animation: rotateYaxis 7s infinite linear;
+}
+
+@-webkit-keyframes rotateYaxis {
+  from {
+    -webkit-transform: rotateY(0deg);
+            transform: rotateY(0deg);
+  }
+  to {
+    -webkit-transform: rotateY(360deg);
+            transform: rotateY(360deg);
+  }
+}
+
+@keyframes rotateYaxis {
+  from {
+    -webkit-transform: rotateY(0deg);
+            transform: rotateY(0deg);
+  }
+  to {
+    -webkit-transform: rotateY(360deg);
+            transform: rotateY(360deg);
+  }
+}
+
+/* Cube Faces */
+#cube-front {
+  -webkit-transform: rotateY(0deg) translateZ(100px);
+          transform: rotateY(0deg) translateZ(100px);
+  background-color: rgba(255, 0, 0, 0.8);
+}
+
+#cube-right {
+  -webkit-transform: rotateY(90deg) translateZ(100px);
+          transform: rotateY(90deg) translateZ(100px);
+  background-color: rgba(255, 217, 0, 0.8);
+}
+
+#cube-back {
+  -webkit-transform: rotateY(180deg) translateZ(100px);
+          transform: rotateY(180deg) translateZ(100px);
+  background-color: rgba(123, 255, 0, 0.8);
+}
+
+#cube-left {
+  -webkit-transform: rotateY(-90deg) translateZ(100px);
+          transform: rotateY(-90deg) translateZ(100px);
+  background-color: rgba(0, 255, 234, 0.8);
+}
+
+#cube-top {
+  -webkit-transform: rotateX(90deg) translateZ(100px);
+          transform: rotateX(90deg) translateZ(100px);
+  background-color: rgba(0, 38, 255, 0.8);
+}
+
+#cube-bottom {
+  -webkit-transform: rotateX(-90deg) translateZ(100px);
+          transform: rotateX(-90deg) translateZ(100px);
+  background-color: rgba(225, 0, 255, 0.8);
+}
+
+/* Buttons */
+#buttons {
+  margin-top: 10%;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[3];
+      grid-template-columns: repeat(3, 1fr);
+}
+
+#buttons button {
+  font-size: 1.5rem;
+  height: 4.5rem;
+  width: 90%;
+  margin: .5rem;
+}
+/*# sourceMappingURL=sass.css.map */
